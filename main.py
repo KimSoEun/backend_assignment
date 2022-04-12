@@ -31,9 +31,9 @@ async def getItemList():
     ]
 
 @app.get('/{item_api}/{item_id}')
-async def getItemDetails():
+async def getItemDetails(item_id: int):
     return {
-        "id": 50, 
+        "id": item_id, 
         "name": "[역대최다-13종]17WINTER 레그미인",
         "broadcaster": "cjmall",
         "category": "패션·잡화",

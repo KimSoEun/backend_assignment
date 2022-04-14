@@ -1,4 +1,21 @@
+from ast import Num
 from fastapi import FastAPI
+from enum import Enum
+from pydantic import BaseModel
+
+class Item(BaseModel):
+    id: Num
+    name: str
+    broadcaster: str
+    category: str
+    price: Num
+    is_alarm_set: bool
+
+class User(BaseModel):
+    id: Num
+    name: str
+    access_token: str
+
 
 app = FastAPI()
 # @app.get("/")
@@ -78,27 +95,27 @@ async def getUserList():
 async def getVisitedItemList():
     return [
         {
-        "id": 50, 
-        "name": "[역대최다-13종]17WINTER 레그미인",
-        "broadcaster": "cjmall",
-        "category": "패션·잡화",
-        "price": 78900,
-        "is_alarm_set": True
+            "id": 50, 
+            "name": "[역대최다-13종]17WINTER 레그미인",
+            "broadcaster": "cjmall",
+            "category": "패션·잡화",
+            "price": 78900,
+            "is_alarm_set": True
         },
         {
-        "id": 49, 
-        "name": "[역대최다-12종]17WINTER 레그미인",
-        "broadcaster": "cjmall",
-        "category": "패션·잡화",
-        "price": 78900,
-        "is_alarm_set": False
+            "id": 49, 
+            "name": "[역대최다-12종]17WINTER 레그미인",
+            "broadcaster": "cjmall",
+            "category": "패션·잡화",
+            "price": 78900,
+            "is_alarm_set": False
         },
         {
-        "id": 48, 
-        "name": "[역대최다-11종]17WINTER 레그미인",
-        "broadcaster": "cjmall",
-        "category": "패션·잡화",
-        "price": 78900,
-        "is_alarm_set": False
+            "id": 48, 
+            "name": "[역대최다-11종]17WINTER 레그미인",
+            "broadcaster": "cjmall",
+            "category": "패션·잡화",
+            "price": 78900,
+            "is_alarm_set": False
         }
     ]

@@ -1,18 +1,19 @@
-from ast import Num
+# from typing import Optional
+
 from fastapi import FastAPI
 from enum import Enum
 from pydantic import BaseModel
 
 class Item(BaseModel):
-    id: Num
+    id: int
     name: str
     broadcaster: str
     category: str
-    price: Num
+    price: int
     is_alarm_set: bool
 
 class User(BaseModel):
-    id: Num
+    id: int
     name: str
     access_token: str
 

@@ -1,0 +1,17 @@
+- api 서버는 총 3개
+api-alarm/sources/main.py,
+api-item/sources/main.py, 
+api-user/sources/main.py
+같이 별개 서버 3개
+각각 dockerfile에 서버 실행 스크립트를 작성
+'docker-compose up --build' 등 명령어
+docker-compose를 실행
+세 서버가 모두 켜지도록.
+
+- 데이터는 이미 3개의 postgresql 스크립트에.
+api 서버에서 postgresql 서버의 데이터를 불러와
+클라이언트에 response 해주도록 구현되어야.
+
+최선: data sharing
+차선: 각 api 서버(3)에서 각 db서버(3)에 다이렉트로 접근
+(ex/ 필요한 데이터들 각각 가져오고 json으로 만들어서 리턴하게끔)
